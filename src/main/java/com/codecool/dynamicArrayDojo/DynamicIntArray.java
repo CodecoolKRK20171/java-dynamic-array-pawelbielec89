@@ -22,7 +22,7 @@ public class DynamicIntArray {
 
     public void remove(int index){
         for (int i = index; i < pointer; i++){
-            dynamicArray[index] = dynamicArray[index+1];
+            dynamicArray[i] = dynamicArray[i+1];
         }
         pointer--;
     }
