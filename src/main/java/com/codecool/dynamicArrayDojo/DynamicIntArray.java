@@ -20,6 +20,13 @@ public class DynamicIntArray {
         dynamicArray[pointer] = record;
     }
 
+    public void remove(int index){
+        for (int i = index; i < pointer; i++){
+            dynamicArray[index] = dynamicArray[index+1];
+        }
+        pointer--;
+    }
+
     private void extendSize(){
         int arrayLength = dynamicArray.length;
         arrayLength = arrayLength * 2;
