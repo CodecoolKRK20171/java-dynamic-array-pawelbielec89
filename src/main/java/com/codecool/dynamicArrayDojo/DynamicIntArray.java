@@ -27,6 +27,15 @@ public class DynamicIntArray {
         pointer--;
     }
 
+    public void insert(int index, int value){
+        for (int i = index; i < pointer; i++){
+            dynamicArray[index+1] = dynamicArray[index];
+
+        }
+        dynamicArray[index] = value;
+        pointer++;
+    }
+
     private void extendSize(){
         int arrayLength = dynamicArray.length;
         arrayLength = arrayLength * 2;
