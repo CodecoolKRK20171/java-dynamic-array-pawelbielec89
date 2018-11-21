@@ -12,6 +12,14 @@ public class DynamicIntArray {
         dynamicArray = new int[size];
     }
 
+    public void add(int record){
+        if (pointer == dynamicArray.length -1){
+            extendSize();
+        }
+        pointer++;
+        dynamicArray[pointer] = record;
+    }
+
     private void extendSize(){
         int arrayLength = dynamicArray.length;
         arrayLength = arrayLength * 2;
