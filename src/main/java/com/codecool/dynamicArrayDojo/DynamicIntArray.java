@@ -39,6 +39,20 @@ public class DynamicIntArray {
         pointer++;
     }
 
+    public String toString(){
+        if (pointer>-1) {
+            StringBuilder recordsToString = new StringBuilder();
+
+            for (int i = 0; i < pointer + 1 ; i++){
+                recordsToString.append( " " + dynamicArray[i]);
+            }
+            return recordsToString.toString();
+        }
+        else {
+            return "";
+        }
+    }
+
     private void extendSize(){
         int arrayLength = dynamicArray.length;
         arrayLength = arrayLength * 2;
