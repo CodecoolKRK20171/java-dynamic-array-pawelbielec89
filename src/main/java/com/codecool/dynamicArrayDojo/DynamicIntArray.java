@@ -3,8 +3,13 @@ package com.codecool.dynamicArrayDojo;
 // put your code here!
 public class DynamicIntArray {
     private int[] dynamicArray;
-    public void DinamicIntArray(){
+    private int pointer = -1;
+
+    public DynamicIntArray(){
         dynamicArray = new int[10];
+    }
+    public DynamicIntArray(int size){
+        dynamicArray = new int[size];
     }
 
     private void extendSize(){
