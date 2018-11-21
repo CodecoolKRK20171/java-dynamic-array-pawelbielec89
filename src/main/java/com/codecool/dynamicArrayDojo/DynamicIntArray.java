@@ -13,7 +13,7 @@ public class DynamicIntArray {
     }
 
     public void add(int record){
-        if (pointer == dynamicArray.length -1){
+        if (pointer >= dynamicArray.length -1){
             extendSize();
         }
         pointer++;
@@ -28,6 +28,9 @@ public class DynamicIntArray {
     }
 
     public void insert(int index, int value){
+        if (pointer >= dynamicArray.length -1){
+            extendSize();
+        }
         for (int i = index; i < pointer; i++){
             dynamicArray[index+1] = dynamicArray[index];
 
@@ -40,12 +43,14 @@ public class DynamicIntArray {
         int arrayLength = dynamicArray.length;
         arrayLength = arrayLength * 2;
         int[] extendedArray = new int[arrayLength];
-        copyRecords(extendedArray);
+        dynamicArray = copyRecords(extendedArray);
     }
 
-    private void copyRecords(int[] newRecords){
+    private int[] copyRecords(int[] newRecords){
         for (int i=0 ; i < dynamicArray.length; i++){
             newRecords[i] = dynamicArray[i];
         }
+        return newRecords;
     }
+
 }
