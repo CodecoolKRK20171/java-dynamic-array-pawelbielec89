@@ -6,4 +6,11 @@ public class DynamicIntArray {
     public void DinamicIntArray(){
         dynamicArray = new int[10];
     }
+
+    private void extendSize(){
+        int arrayLength = dynamicArray.length;
+        arrayLength = arrayLength * 2;
+        int[] extendedArray = new int[arrayLength];
+
+    }
 }
