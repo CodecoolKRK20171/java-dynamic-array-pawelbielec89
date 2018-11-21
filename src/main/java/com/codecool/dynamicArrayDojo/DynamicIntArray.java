@@ -31,16 +31,21 @@ public class DynamicIntArray {
         pointer--;
     }
 
-    public void insert(int index, int value){
-        if (pointer >= dynamicArray.length -1){
-            extendSize();
-        }
-        for (int i = index; i < pointer; i++){
-            dynamicArray[index+1] = dynamicArray[index];
+    public void insert(int index, int value) {
+        if (index > pointer) {
+            add(value);
+        } else {
+            if (pointer >= dynamicArray.length - 1) {
+                extendSize();
+            }
 
+            for (int i = pointer+1 ; i > index; i--) {
+                dynamicArray[i] = dynamicArray[i-1];
+
+            }
+            dynamicArray[index] = value;
+            pointer++;
         }
-        dynamicArray[index] = value;
-        pointer++;
     }
 
     public String toString(){
