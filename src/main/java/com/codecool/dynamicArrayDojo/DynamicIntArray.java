@@ -20,7 +20,11 @@ public class DynamicIntArray {
         dynamicArray[pointer] = record;
     }
 
-    public void remove(int index){
+    public void remove(int index) {
+        if (index < 0 || index > pointer){
+            throw new ArrayIndexOutOfBoundsException("Wrong index to remove.");
+        }
+
         for (int i = index; i < pointer; i++){
             dynamicArray[i] = dynamicArray[i+1];
         }
